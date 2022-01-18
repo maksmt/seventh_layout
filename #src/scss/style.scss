@@ -1,0 +1,677 @@
+@use "sass:math";
+@import "mixins";
+@import url(/node_modules/bootstrap/scss/_mixins.scss);
+@import url(/node_modules/bootstrap/scss/_variables.scss);
+@import url(/node_modules/bootstrap/scss/mixins/_breakpoints.scss);
+@import url(/node_modules/bootstrap/scss/mixins/_container.scss);
+
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import "fonts";
+@import "_gallery";
+//</Подключаем шрифты>=======================================================================================
+//<Иконочные шрифты>==========================================================================================
+//@import "icons";
+//</Иконочные шрифты>==========================================================================================
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "Varela Round";
+$fontSize: 16;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320;
+$maxWidth: 2000;
+$maxWidthContainer: 1170;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #000;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+    color: $mainColor;
+    &._lock {
+        overflow: hidden;
+    }
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    &._loaded {
+    }
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+// ._container {
+//     max-width: $maxWidthContainer + 10px;
+//     margin: 0 auto;
+//     @media (max-width: $md1 + 1px) {
+//         max-width: 970px;
+//     }
+//     @media (max-width: $md2+ 1px) {
+//         max-width: 750px;
+//     }
+//     @media (max-width: $md3+1px) {
+//         max-width: none;
+//         padding: 0 10px;
+//     }
+// }
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+@import "forms";
+@import "ui";
+
+@import "header";
+@import "footer";
+
+.page {
+    flex: 1 1 auto;
+}
+
+// .container {
+//     min-width: 1170px;
+// }
+//===================================================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+body {
+    background: #fff;
+    .wrapper {
+        width: $maxWidth;
+        position: relative;
+        font-family: $fontFamily;
+    }
+}
+.hello {
+    display: flex;
+    justify-content: center;
+    margin-top: 92px;
+    position: relative;
+    height: 700px;
+    width: 100%;
+    background: #de5d5d;
+    background: url(../img/iPhone.png) no-repeat;
+    margin: 0 auto;
+    background-size: 1554px auto;
+    background-position: center;
+    background-color: #de5d5d;
+    margin-top: 93px;
+    .hello__title {
+        margin: 202px 0 0 128px;
+        width: 999px;
+        white-space: nowrap;
+        width: 839px;
+        height: 85px;
+        color: #ffffff;
+        font-family: "Montserrat";
+        font-size: 90px;
+        font-weight: 600;
+        letter-spacing: -1.1px;
+        text-align: left;
+    }
+    .market__button-slider {
+        position: absolute;
+        display: flex;
+        width: 750px;
+        height: 315px;
+        margin: 380px 0 0 137px;
+        .app__market,
+        .play__market {
+            width: 257px;
+            height: 77px;
+            border-radius: 5px;
+            border: 3px solid #ffffff;
+            background-color: transparent;
+            margin: 0 0 0 30px;
+
+            &:hover {
+                background: rgb(255, 255, 255, 0.5);
+                cursor: pointer;
+            }
+        }
+        .slider__item {
+            display: flex;
+            margin-top: 3px;
+        }
+        .app__store-title,
+        .play__store-title {
+            margin: 0 0 0 20px;
+            width: 141px;
+            height: 30px;
+            color: #ffffff;
+            font-family: "Varela Round";
+            font-size: 30px;
+            font-weight: 400;
+            text-align: left;
+            position: absolute;
+            white-space: nowrap;
+            margin: 12px 0 0 8px;
+        }
+        .app_store,
+        .play_store {
+            margin: 12px 0 0 22px;
+        }
+        .play__store-title {
+            margin: 12px 0 0 18px;
+        }
+        .app_store,
+        .play_store {
+            margin: 12px 0 0 25px;
+        }
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+            margin: 252px 0 0 273px;
+            position: absolute;
+            li {
+                list-style: none;
+                margin: 0 0 0 9px;
+                &.slick-active button {
+                    background: #fff;
+                }
+            }
+            button {
+                font-size: 0;
+                width: 10px;
+                height: 10px;
+                background-color: transparent;
+                border-radius: 50%;
+                border: 1px solid white;
+            }
+        }
+    }
+}
+.about {
+    margin: 0 auto;
+    position: relative;
+    height: 695px;
+    opacity: 0.98;
+    .about__title {
+        margin: 105px 0 0 437px;
+        position: absolute;
+        white-space: nowrap;
+        height: 46px;
+        color: #3a3a3a;
+        font-family: "Montserrat";
+        font-size: 48px;
+        font-weight: 600;
+        text-align: left;
+    }
+    .about__categories {
+        display: flex;
+        margin: 222px 0 0 38px;
+        justify-items: center;
+        align-items: center;
+        position: absolute;
+        .category__item {
+            margin-right: 170px;
+            &:last-child {
+                margin-left: -12px;
+            }
+            .item__img {
+                padding-left: 10px;
+            }
+            .item__text {
+                position: absolute;
+                width: 270px;
+                text-align: center;
+                color: #666666;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                margin: 37px 0 0 -10px;
+                font-family: Montserrat;
+
+                span {
+                    text-align: center;
+                    width: 229px;
+                    height: 90px;
+                    color: #666666;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    margin-left: -10px;
+                }
+            }
+        }
+    }
+}
+.share {
+    position: relative;
+    height: 734px;
+    background-color: #262626;
+    .share__title {
+        white-space: nowrap;
+        width: 358px;
+        height: 47px;
+        color: #ffffff;
+        font-family: Montserrat;
+        font-size: 48px;
+        font-weight: 600;
+        text-align: left;
+        float: right;
+        letter-spacing: -0.8px;
+        margin: 183px 0px 0 -25px;
+    }
+    .share__iphone {
+        max-width: 792px;
+        margin: 72px 0px 0 -128px;
+    }
+    .share__desc {
+        width: 482px;
+        height: 72px;
+        color: #aeaeae;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: left;
+        position: absolute;
+        margin: 260px 0px 0 567px;
+    }
+    .button__slider {
+        position: absolute;
+        width: 200px;
+        height: 250px;
+        cursor: pointer;
+        margin: 390px 0px 0 570px;
+        .slick-dots {
+            display: flex;
+            margin: 37px 0 0 -10px;
+            li {
+                list-style: none;
+                margin: 0 0 0 9px;
+                &.slick-active button {
+                    background: #fff;
+                }
+            }
+            button {
+                font-size: 0;
+                width: 10px;
+                height: 10px;
+                background-color: transparent;
+                border-radius: 50%;
+                border: 1px solid white;
+            }
+        }
+    }
+    .share__button-desc {
+        margin: 388px 0px 0 -366px;
+        position: absolute;
+        width: 263px;
+        height: 88px;
+        color: #aeaeae;
+        line-height: 24px;
+        text-align: left;
+    }
+}
+.features {
+    height: 803px;
+    background-color: #313131;
+    position: relative;
+    .features__title {
+        position: absolute;
+        width: 331px;
+        white-space: nowrap;
+        color: #ffffff;
+        font-family: Montserrat;
+        font-size: 48px;
+        text-align: left;
+        margin: 167px 0 0 51px;
+        letter-spacing: 0.4px;
+    }
+    .features__desc {
+        position: absolute;
+        width: 432px;
+        height: 72px;
+        color: #aeaeae;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: left;
+
+        margin: 245px 0 0 56px;
+    }
+    .features__img {
+        margin: 39px 0 0 566px;
+    }
+    .features__slider {
+        position: absolute;
+        margin: 393px 0 0 55px;
+        width: 470px;
+        border-radius: 5px;
+        background: #fff;
+        height: 222px;
+        .slider__item {
+            width: 470px;
+            border-radius: 5px;
+        }
+        .slider__bullet-block {
+            width: 470px;
+            height: 43px;
+            background-color: #f06464;
+        }
+        .features__brush {
+            margin: 45px 0 0 35px;
+        }
+        .item__title {
+            margin: 30px 0 0 150px;
+            position: absolute;
+            white-space: nowrap;
+            width: 161px;
+            font-weight: 600;
+            height: 17px;
+            color: #cc5858;
+            font-family: Montserrat;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: left;
+        }
+        .item__text {
+            position: absolute;
+            margin: 65px 0 0 150px;
+
+            width: 258px;
+            height: 88px;
+            color: #666666;
+            font-family: "Varela Round";
+            line-height: 24px;
+            text-align: left;
+        }
+        .slick-dots {
+            position: absolute;
+            display: flex;
+            margin: 45px 0 0 0px;
+            width: 470px;
+            height: 43px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            z-index: 0;
+            padding-left: 31px;
+            background-color: #f06464;
+            li {
+                list-style: none;
+                margin: 2px 0 0 9px;
+                &.slick-active button {
+                    background: #fff;
+                }
+            }
+            button {
+                font-size: 0;
+                width: 10px;
+                height: 10px;
+                background-color: transparent;
+                border-radius: 50%;
+                border: 1px solid white;
+            }
+        }
+    }
+}
+.gallery {
+    position: relative;
+    height: 822px;
+    .gallery__title {
+        margin: 70px 0 0 65px;
+        letter-spacing: -0.6px;
+        white-space: nowrap;
+        font-weight: 600;
+        width: 377px;
+        height: 38px;
+        color: #f06464;
+        font-family: Montserrat;
+        font-size: 48px;
+        text-align: left;
+        position: absolute;
+    }
+    .gallery__desc {
+        position: absolute;
+        margin: 146px 0 0 73px;
+        width: 432px;
+        word-spacing: 0.2px;
+        height: 72px;
+        color: #666666;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: left;
+    }
+    .photos {
+        display: flex;
+        justify-content: center;
+        margin: 304px 0 0 0;
+        margin: 0 auto;
+        position: relative;
+
+        .gallery__block {
+            background-color: #151515;
+            height: 87px;
+            position: absolute;
+            z-index: 1;
+            margin-top: -139px;
+            justify-content: space-between;
+            width: auto;
+            display: none;
+        }
+        .gallery__item {
+            position: relative;
+            height: 520px;
+            background-color: #151515;
+            transition: transform 500ms ease;
+            transform: translateY(0);
+            &:hover {
+                transform: translateY(-37px);
+                .gallery__block {
+                    display: flex;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+.download {
+    width: 100%;
+    position: relative;
+    height: 723px;
+    background-color: #de5d5d;
+    &__icon {
+        position: absolute;
+        margin: 223px 0 0 68px;
+    }
+    &__desc {
+        margin: 165px 0 0 468px;
+        position: absolute;
+        width: 409px;
+        height: 161px;
+        color: #ffffff;
+        font-family: Montserrat;
+        font-size: 48px;
+        font-weight: 400;
+        text-align: left;
+        letter-spacing: -0.5px;
+        line-height: normal;
+    }
+    &__text {
+        position: absolute;
+        white-space: nowrap;
+        width: 190px;
+        height: 24px;
+        color: #ffffff;
+        font-family: "Varela Round";
+        font-size: 24px;
+        text-align: left;
+        margin: 352px 0 0 469px;
+    }
+    .buttons {
+        position: inherit;
+        display: flex;
+        margin: 428px 0 0 435px;
+        position: absolute;
+        .app__market,
+        .play__market {
+            width: 257px;
+            height: 77px;
+            border-radius: 5px;
+            border: 3px solid #ffffff;
+            background-color: transparent;
+            margin: 0px 0 0 33px;
+
+            &:hover {
+                background: rgb(255, 255, 255, 0.5);
+                cursor: pointer;
+            }
+        }
+        .app__store-title,
+        .play__store-title {
+            margin: 0 0 0 20px;
+            width: 141px;
+            height: 30px;
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: 400;
+            text-align: left;
+            position: absolute;
+            white-space: nowrap;
+            margin: 12px 0 0 13px;
+        }
+        .play__store-title {
+            margin: 12px 0 0 18px;
+        }
+        .app_store,
+        .play_store {
+            margin: 12px 0 0 22px;
+        }
+    }
+}
+.compatibility {
+    width: 100%;
+    height: 444px;
+    background-color: #e7e7e7;
+    &__title {
+        position: absolute;
+        margin: 86px 0 0 70px;
+        width: 163px;
+        letter-spacing: -0.3px;
+        font-size: 24px;
+        color: #666666;
+        font-family: Montserrat;
+        font-weight: 600;
+        text-align: left;
+    }
+    .ios__title,
+    .android__title {
+        width: 421px;
+        height: 66px;
+        color: #666666;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: left;
+        margin: 170px 0 0 74px;
+        position: absolute;
+    }
+    .android__title {
+        margin-left: 2px;
+        letter-spacing: 1.1px;
+    }
+    .ios__desc,
+    .android__desc {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        width: 418px;
+        color: #666666;
+        letter-spacing: -0.6px;
+        margin: 195px 0 0 70px;
+    }
+    .android__desc {
+        width: 453px;
+        margin: 192px 0 0 0px;
+        letter-spacing: -0.6px;
+        word-spacing: 0.1em;
+    }
+    .ios__img {
+        margin-top: 30px;
+    }
+    .android__img {
+        margin-top: 33px;
+    }
+    .line {
+        position: absolute;
+        width: 970px;
+        border-bottom: 2px solid #cbcbcb;
+        margin: 137px 0 0 69px;
+    }
+}
+
+//===========================================
+/* Слайдер */
+.slick-slider {
+}
+/* Слайдер запущен */
+.slick-slider.slick-initialized {
+}
+/* Слайдер с точками */
+.slick-slider.slick-dotted {
+}
+/* Ограничивающая оболочка */
+.slick-list {
+    overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track {
+    display: flex;
+}
+/* Слайд */
+.slick-slide {
+}
+/* Слайд активный (показывается) */
+.slick-slide.slick-active {
+}
+/* Слайд основной */
+.slick-slide.slick-current {
+}
+/* Слайд по центру */
+.slick-slide.slick-center {
+}
+/* Клонированный слайд */
+.slick-slide.slick-cloned {
+}
+/* Стрелка */
+.slick-arrow {
+}
+/* Стрелка влево */
+.slick-arrow.slick-prev {
+}
+/* Стрелка вправо */
+.slick-arrow.slick-next {
+}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled {
+}
+/* Точки (булиты) */
+.slick-dots {
+}
+.slick-dots li {
+}
+/* Активная точка */
+.slick-dots li.slick-active {
+}
+/* Элемент точки */
+.slick-dots li button {
+}
+//======================================Gallery
