@@ -151,7 +151,7 @@ body {
     height: 695px;
     opacity: 0.98;
     .about__title {
-        margin: 105px 0 0 437px;
+        margin: 100px 0 0 410px;
         position: absolute;
         white-space: nowrap;
         height: 46px;
@@ -163,14 +163,14 @@ body {
     }
     .about__categories {
         display: flex;
-        margin: 222px 0 0 38px;
+        margin: 220px 0 0 18px;
         justify-items: center;
         align-items: center;
         position: absolute;
         .category__item {
             margin-right: 170px;
             &:last-child {
-                margin-left: -12px;
+                margin-left: 12px;
             }
             .item__img {
                 padding-left: 10px;
@@ -1690,8 +1690,6 @@ body {
 }
 @media (max-width: 365px) {
     .features {
-        .features__title {
-        }
         .features__desc {
             margin-left: 10px;
         }
