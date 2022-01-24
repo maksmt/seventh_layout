@@ -26,12 +26,20 @@ footer {
         margin: -25px 0 0 -2px;
         display: flex;
         position: absolute;
-        input {
+        .email-input {
+            padding-left: 10px;
             width: 311px;
             height: 48px;
             border-radius: 5px;
             border: 1px solid #a3a3a3;
             background-color: #f4f4f4;
+            &:focus {
+                color: #666666;
+                border: 1px solid #de5d5d;
+                box-shadow: 0px 0px 2px 1.4px #ca6666;
+                outline: none;
+                box-shadow: 0 5px 5px -5px #b66161;
+            }
         }
         button {
             margin: 24px 0 0 5px;
@@ -41,10 +49,158 @@ footer {
             background-color: #f06464;
             border: none;
             color: #fff;
-            :hover {
-                background-color: #f3b2b2;
+            &:hover {
+                background-color: rgba(240, 100, 100, 0.8);
                 color: #fff;
             }
+        }
+    }
+    @media (max-width: 1199.92px) {
+        .footer__email {
+            .email__text {
+                margin-left: -130px;
+            }
+        }
+        .contact__form {
+            margin-left: -130px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .copyright {
+            margin-left: -30px;
+        }
+        .footer__email {
+            .email__text {
+                margin-left: -370px;
+            }
+        }
+        .contact__form {
+            margin: -10px 0 0 -375px;
+            button {
+                margin-top: 0;
+            }
+        }
+    }
+    @media (max-width: 768.97px) {
+        .footer__email {
+            .email__text {
+                @include null;
+                margin: -30px 0 0 -475px;
+            }
+        }
+        .copyright {
+            width: 230px;
+            white-space: pre-wrap;
+            margin: 150px 0 0 180px;
+        }
+        .contact__form {
+            margin-top: 20px;
+            margin-left: -560px;
+        }
+    }
+    @media (max-width: 767.97px) {
+        .footer__email {
+            .email__text {
+                @include null;
+                margin: -30px 0 0 -515px;
+            }
+        }
+        .copyright {
+            width: 230px;
+            white-space: pre-wrap;
+            margin: 150px 0 0 120px;
+        }
+        .contact__form {
+            margin-top: 20px;
+            margin-left: -600px;
+        }
+    }
+    @media (max-width: 510px) {
+        height: 300px;
+        .footer__email {
+            .email__text {
+                margin: -30px 0 0 -545px;
+            }
+        }
+        .copyright {
+            text-align: center;
+            margin: 220px 0 0 120px;
+        }
+        .contact__form {
+            margin-top: 20px;
+            margin-left: -580px;
+            button {
+                margin: 65px 0 0 -220px;
+            }
+        }
+    }
+    @media (max-width: 510px) {
+        .footer__email {
+            .email__text {
+                margin: -30px 0 0 -585px;
+            }
+        }
+        .copyright {
+            margin: 220px 0 0 0px;
+        }
+        .contact__form {
+            margin-left: -620px;
+        }
+    }
+    @media (max-width: 430px) {
+        .footer__email {
+            .email__text {
+                margin: -30px 0 0 -605px;
+            }
+        }
+        .copyright {
+            text-align: center;
+            margin: 220px 0 0 0px;
+        }
+        .contact__form {
+            margin-left: -640px;
+        }
+    }
+    @media (max-width: 410px) {
+        .footer__email {
+            .email__text {
+                margin: -30px 0 0 -615px;
+            }
+        }
+        .contact__form {
+            margin-left: -660px;
+        }
+    }
+    @media (max-width: 367px) {
+        .footer__email {
+            .email__text {
+                margin: -30px 0 0 -635px;
+            }
+        }
+        .copyright {
+            text-align: center;
+            margin: 220px 0 0 15px;
+        }
+        .contact__form {
+            margin-left: -670px;
+        }
+    }
+    @media (max-width: 335px) {
+        .footer__email {
+            .email__text {
+                margin: -30px 0 0 -648px;
+            }
+        }
+        .copyright {
+            text-align: center;
+            margin: 220px 0 0 2px;
+        }
+        .contact__form {
+            .email-input {
+                width: 300px;
+            }
+            margin-left: -683px;
         }
     }
 }

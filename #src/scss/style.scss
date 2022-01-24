@@ -4,27 +4,10 @@
 @import url(/node_modules/bootstrap/scss/_variables.scss);
 @import url(/node_modules/bootstrap/scss/mixins/_breakpoints.scss);
 @import url(/node_modules/bootstrap/scss/mixins/_container.scss);
-
-//</МИКСИНЫ>===============================================================================================
-
-//<ШРИФТЫ>===============================================================================================
-
-//<Подключаем шрифты>=======================================================================================
-//&display=swap&subset=cyrillic-ext
 @import "fonts";
-@import "_gallery";
-//</Подключаем шрифты>=======================================================================================
-//<Иконочные шрифты>==========================================================================================
-//@import "icons";
-//</Иконочные шрифты>==========================================================================================
-//<Шрифт по умолчанию>==========================================================================================
+
 $fontFamily: "Varela Round";
 $fontSize: 16;
-//</Шрифт по умолчанию>==========================================================================================
-
-//</ШРИФТЫ>=======================================================================================================
-
-//<ПЕРЕМЕННЫЕ>==========================================================================================================
 $minWidth: 320;
 $maxWidth: 2000;
 $maxWidthContainer: 1170;
@@ -32,52 +15,20 @@ $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
+$mainColor: #fff;
 
-$mainColor: #000;
-
-//</ПЕРЕМЕННЫЕ>===========================================================================================================
-
-//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 @import "null";
 body {
     color: $mainColor;
-    &._lock {
-        overflow: hidden;
-    }
 }
-//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 
-//<ОБОЛОЧКА>===========================================================================================================
 .wrapper {
     width: 100%;
     min-height: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    &._loaded {
-    }
 }
-//</ОБОЛОЧКА>===========================================================================================================
-
-//<ОСНОВНАЯ СЕТКА>===========================================================================================================
-// ._container {
-//     max-width: $maxWidthContainer + 10px;
-//     margin: 0 auto;
-//     @media (max-width: $md1 + 1px) {
-//         max-width: 970px;
-//     }
-//     @media (max-width: $md2+ 1px) {
-//         max-width: 750px;
-//     }
-//     @media (max-width: $md3+1px) {
-//         max-width: none;
-//         padding: 0 10px;
-//     }
-// }
-//</ОСНОВНАЯ СЕТКА>===========================================================================================================
-
-@import "forms";
-@import "ui";
 
 @import "header";
 @import "footer";
@@ -86,12 +37,6 @@ body {
     flex: 1 1 auto;
 }
 
-// .container {
-//     min-width: 1170px;
-// }
-//===================================================================================================================================
-
-//</ОСНОВНОЙ БЛОК>====================================================================================================
 body {
     background: #fff;
     .wrapper {
@@ -106,14 +51,15 @@ body {
     margin-top: 92px;
     position: relative;
     height: 700px;
-    width: 100%;
+    max-width: 100%;
     background: #de5d5d;
     background: url(../img/iPhone.png) no-repeat;
     margin: 0 auto;
     background-size: 1554px auto;
     background-position: center;
     background-color: #de5d5d;
-    margin-top: 93px;
+    margin-top: 92px;
+    opacity: 0.98;
     .hello__title {
         margin: 202px 0 0 128px;
         width: 999px;
@@ -269,31 +215,31 @@ body {
         text-align: left;
         float: right;
         letter-spacing: -0.8px;
-        margin: 183px 0px 0 -25px;
+        margin: 183px 0px 0 14px;
     }
     .share__iphone {
         max-width: 792px;
-        margin: 72px 0px 0 -128px;
+        margin: 72px 0px 0 -118px;
     }
     .share__desc {
-        width: 482px;
+        width: 472px;
         height: 72px;
         color: #aeaeae;
         font-size: 18px;
         line-height: 27px;
         text-align: left;
         position: absolute;
-        margin: 260px 0px 0 567px;
+        margin: 260px 0px 0 582px;
     }
     .button__slider {
         position: absolute;
-        width: 200px;
+        width: 170px;
         height: 250px;
         cursor: pointer;
-        margin: 390px 0px 0 570px;
+        margin: 390px 0px 0 582px;
         .slick-dots {
             display: flex;
-            margin: 37px 0 0 -10px;
+            margin: 33px 0 0 -10px;
             li {
                 list-style: none;
                 margin: 0 0 0 9px;
@@ -312,9 +258,9 @@ body {
         }
     }
     .share__button-desc {
-        margin: 388px 0px 0 -366px;
+        margin: 382px 0px 0 -161px;
         position: absolute;
-        width: 263px;
+        width: 243px;
         height: 88px;
         color: #aeaeae;
         line-height: 24px;
@@ -329,7 +275,7 @@ body {
         position: absolute;
         width: 331px;
         white-space: nowrap;
-        color: #ffffff;
+        color: $mainColor;
         font-family: Montserrat;
         font-size: 48px;
         text-align: left;
@@ -356,7 +302,7 @@ body {
         margin: 393px 0 0 55px;
         width: 470px;
         border-radius: 5px;
-        background: #fff;
+        background: $mainColor;
         height: 222px;
         .slider__item {
             width: 470px;
@@ -409,7 +355,7 @@ body {
                 list-style: none;
                 margin: 2px 0 0 9px;
                 &.slick-active button {
-                    background: #fff;
+                    background: $mainColor;
                 }
             }
             button {
@@ -424,10 +370,13 @@ body {
     }
 }
 .gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     position: relative;
     height: 822px;
     .gallery__title {
-        margin: 70px 0 0 65px;
+        margin: 70px 0 0 63px;
         letter-spacing: -0.6px;
         white-space: nowrap;
         font-weight: 600;
@@ -441,7 +390,7 @@ body {
     }
     .gallery__desc {
         position: absolute;
-        margin: 146px 0 0 73px;
+        margin: 147px 0 0 77px;
         width: 432px;
         word-spacing: 0.2px;
         height: 72px;
@@ -454,7 +403,7 @@ body {
         display: flex;
         justify-content: center;
         margin: 304px 0 0 0;
-        margin: 0 auto;
+        width: 100%;
         position: relative;
 
         .gallery__block {
@@ -467,17 +416,95 @@ body {
             width: auto;
             display: none;
         }
-        .gallery__item {
+        .gallery__photo {
             position: relative;
             height: 520px;
             background-color: #151515;
-            transition: transform 500ms ease;
-            transform: translateY(0);
+            .gallery__item {
+                transition: transform 500ms ease;
+                transform: translateY(0);
+            }
             &:hover {
-                transform: translateY(-37px);
+                .gallery__item {
+                    transform: translateY(-37px);
+                }
                 .gallery__block {
                     display: flex;
-                    z-index: 1;
+                    width: 100%;
+                    margin-top: -25px;
+                    bottom: 18px;
+                    .block__text {
+                        font-size: 18px;
+                        line-height: 27px;
+                        color: #c2c2c2;
+                        margin-top: 28px;
+                        margin-left: 31px;
+                    }
+                    .block__stat {
+                        display: flex;
+                        margin: 26px 33px 0 0;
+                        .heart {
+                            margin-right: 10px;
+                            width: 25px;
+                            height: 21px;
+                        }
+                        .number {
+                            font-size: 24px;
+                            line-height: 27px;
+                            color: #f06464;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1999px) {
+    .gallery {
+        .photos {
+            width: 100%;
+            .gallery__photo {
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1500px) {
+    .gallery {
+        .gallery__title {
+            margin-left: 370px;
+        }
+        .gallery__desc {
+            text-align: center;
+            margin-left: 340px;
+        }
+        height: 1320px;
+        .photos {
+            width: 970px;
+            height: 400px;
+            margin-top: 0;
+            .gallery__photo {
+                .gallery__item {
+                    width: 490px;
+                }
+                width: 600px;
+                img {
+                    height: 100%;
+                }
+
+                &:nth-child(1),
+                &:nth-child(2) {
+                    margin-top: -187px;
+                }
+                &:nth-child(3),
+                &:nth-child(4) {
+                    margin-top: 333px;
+                }
+                &:nth-child(3) {
+                    margin-left: -980px;
                 }
             }
         }
@@ -497,7 +524,7 @@ body {
         position: absolute;
         width: 409px;
         height: 161px;
-        color: #ffffff;
+        color: $mainColor;
         font-family: Montserrat;
         font-size: 48px;
         font-weight: 400;
@@ -510,7 +537,7 @@ body {
         white-space: nowrap;
         width: 190px;
         height: 24px;
-        color: #ffffff;
+        color: $mainColor;
         font-family: "Varela Round";
         font-size: 24px;
         text-align: left;
@@ -526,7 +553,7 @@ body {
             width: 257px;
             height: 77px;
             border-radius: 5px;
-            border: 3px solid #ffffff;
+            border: 3px solid $mainColor;
             background-color: transparent;
             margin: 0px 0 0 33px;
 
@@ -540,7 +567,7 @@ body {
             margin: 0 0 0 20px;
             width: 141px;
             height: 30px;
-            color: #ffffff;
+            color: $mainColor;
             font-size: 30px;
             font-weight: 400;
             text-align: left;
@@ -618,60 +645,1250 @@ body {
     }
 }
 
-//===========================================
-/* Слайдер */
-.slick-slider {
-}
-/* Слайдер запущен */
-.slick-slider.slick-initialized {
-}
-/* Слайдер с точками */
-.slick-slider.slick-dotted {
-}
-/* Ограничивающая оболочка */
+//===========================================//
 .slick-list {
     overflow: hidden;
 }
-/* Лента слайдов */
 .slick-track {
     display: flex;
 }
-/* Слайд */
-.slick-slide {
+//===========================================//
+
+@media (max-width: 1500px) {
+    .hello {
+        background-position: bottom;
+        background-size: contain;
+        .hello__title {
+            margin: 30px 0 0 140px;
+        }
+    }
 }
-/* Слайд активный (показывается) */
-.slick-slide.slick-active {
+@media (max-width: 1200px) {
+    .hello {
+        .hello__title {
+            margin: 40px 0 0 55px;
+        }
+    }
+    .about {
+        .about__title {
+            margin: 105px 0 0 337px;
+        }
+        .about__categories {
+            margin-right: 5px;
+            .category__item {
+                margin-right: 240px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .share {
+        .share__title {
+            margin-left: -90px;
+        }
+        .share__desc {
+            margin-left: 505px;
+        }
+        .share__button-desc {
+            margin-left: -120px;
+        }
+        .button__slider {
+            margin-left: 505px;
+        }
+    }
+    .features {
+        .features__title {
+            @include null;
+        }
+        .features__desc {
+            @include null;
+        }
+        .features__img {
+            margin-left: 430px;
+        }
+        .features__slider {
+            @include null;
+        }
+    }
+    .download {
+        &__icon {
+            @include null;
+            margin-left: 80px;
+        }
+        &__desc,
+        &__text {
+            @include null;
+            margin-left: 430px;
+        }
+        .buttons {
+            @include null;
+            margin-left: 400px;
+        }
+    }
+    .gallery {
+        background-color: $mainColor;
+        &__photo {
+            width: 400px;
+            &__item {
+                width: 100%;
+                height: 419px;
+            }
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: -30px;
+        }
+        .line {
+            margin-left: -30px;
+        }
+        .ios__title {
+            @include null;
+            margin-left: -10px;
+        }
+        .ios__desc {
+            @include null;
+            margin-left: -27px;
+        }
+        .android__title {
+            @include null;
+            margin-left: 15px;
+        }
+        .android__desc {
+            @include null;
+        }
+    }
 }
-/* Слайд основной */
-.slick-slide.slick-current {
+@media (max-width: 992px) {
+    .hello {
+        background-size: contain;
+        .hello__title {
+            display: flex;
+            justify-content: center;
+            margin: 60px 0 0 -80px;
+            font-size: 75px;
+        }
+        .market__button-slider {
+            margin-left: 95px;
+        }
+    }
+    .about {
+        .about__title {
+            margin: 105px 0 0 180px;
+        }
+        width: 700px;
+        height: 1200px;
+        .about__categories {
+            width: 700px;
+            .category__item {
+                &:last-child {
+                    margin: 200px auto;
+                }
+            }
+        }
+    }
+    .share {
+        .share__iphone {
+            width: 550px;
+            position: absolute;
+            bottom: 0;
+            margin-left: -90px;
+        }
+        .share__title {
+            margin: 70px 0 0 160px;
+        }
+        .share__desc {
+            width: 300px;
+            margin-left: 400px;
+        }
+        .share__button-desc {
+            margin: 600px 0 0 -120px;
+        }
+        .button__slider {
+            margin: 440px 0 0 400px;
+        }
+    }
+    .features {
+        height: 1400px;
+        .features__title {
+            margin-left: 130px;
+        }
+        .features__desc {
+            margin-left: 110px;
+        }
+        .features__slider {
+            margin-left: 90px;
+        }
+        .features__img {
+            position: absolute;
+            bottom: 0;
+            margin-left: 45px;
+        }
+    }
+    .download {
+        height: 900px;
+        &__icon {
+            position: absolute;
+            margin: 30px 0 0 340px;
+        }
+        &__desc {
+            text-align: center;
+            margin: 350px 0 0 260px;
+        }
+        &__text {
+            margin: 550px 0 0 360px;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            margin: 600px 0 0 300px;
+            .play__market {
+                margin-top: 10px;
+            }
+        }
+    }
+    .compatibility {
+        height: 700px;
+        &__title {
+            margin-left: 230px;
+        }
+        &__ios {
+            margin-left: 160px;
+        }
+        &__android {
+            margin: 60px 0 0 130px;
+        }
+        .line {
+            @include null;
+            margin-left: 90px;
+            width: 80%;
+        }
+        .android__title {
+            margin-top: 0;
+        }
+        .android__desc {
+            margin-top: 25px;
+        }
+    }
+    .gallery {
+        height: 2000px;
+        .gallery__title {
+            margin-left: 150px;
+        }
+        .gallery__desc {
+            margin-left: 130px;
+        }
+        .photos {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            .gallery__photo {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 0;
+                &:nth-child(1),
+                &:nth-child(2) {
+                    margin-top: 0px;
+                }
+                &:nth-child(3),
+                &:nth-child(4) {
+                    margin-top: 0px;
+                }
+                &:nth-child(3) {
+                    margin-left: 0px;
+                }
+                &:nth-child(1) {
+                    margin-top: 200px;
+                }
+                .gallery__item {
+                    max-width: 400px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
 }
-/* Слайд по центру */
-.slick-slide.slick-center {
+@media (max-width: 890px) {
+    .download {
+        &__icon {
+            margin-left: 300px;
+        }
+        &__desc {
+            margin-left: 220px;
+        }
+        &__text {
+            margin-left: 330px;
+        }
+        .buttons {
+            margin-left: 270px;
+        }
+    }
 }
-/* Клонированный слайд */
-.slick-slide.slick-cloned {
+@media (max-width: 810px) {
+    .hello {
+        .hello__title {
+            margin-left: 110px;
+            text-align: center;
+            width: 500px;
+            white-space: pre-wrap;
+        }
+        .market__button-slider {
+            .slider__item {
+                margin-left: 170px;
+                flex-direction: column;
+                .play__market {
+                    margin-top: 40px;
+                }
+            }
+
+            .slick-dots {
+                margin-left: 290px;
+            }
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 270px;
+        }
+        &__desc {
+            margin-left: 190px;
+        }
+        &__text {
+            margin-left: 300px;
+        }
+        .buttons {
+            margin-left: 240px;
+        }
+    }
 }
-/* Стрелка */
-.slick-arrow {
+
+@media (max-width: 767.98px) {
+    .hello {
+        .hello__title {
+            margin-left: 25px;
+        }
+    }
+    .about {
+        .about__title {
+            margin: 45px 0 0 100px;
+        }
+        height: 1600px;
+        .about__categories {
+            margin: 32px 0 0 105px;
+            width: 700px;
+            .category__item {
+                width: 300px;
+                margin: 120px auto;
+                &:last-child {
+                    margin: 120px auto;
+                }
+            }
+        }
+    }
+    .share {
+        height: 1200px;
+        .share__iphone {
+            width: 550px;
+            position: absolute;
+            bottom: 0;
+            margin-left: -20px;
+        }
+        .share__title {
+            margin: 70px 0 0 50px;
+        }
+        .share__desc {
+            width: 500px;
+            margin: 200px 0 0 20px;
+        }
+        .share__button-desc {
+            width: 400px;
+            margin: 550px 0 0 -350px;
+        }
+        .button__slider {
+            margin: 340px 0 0 140px;
+
+            .slick-dots {
+                margin-left: 45px;
+            }
+        }
+    }
+    .features {
+        .features__title {
+            margin-left: 90px;
+        }
+        .features__desc {
+            text-align: center;
+            margin-left: 40px;
+        }
+        .features__slider {
+            margin-left: 25px;
+        }
+        .features__img {
+            margin-left: -30px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 250px;
+        }
+        &__desc {
+            margin-left: 170px;
+        }
+        &__text {
+            margin-left: 280px;
+        }
+        .buttons {
+            margin-left: 220px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 170px;
+        }
+        &__ios {
+            margin-left: 100px;
+        }
+        &__android {
+            margin: 60px 0 0 70px;
+        }
+        .line {
+            margin-left: 60px;
+        }
+    }
+    .gallery {
+        .gallery__title {
+            margin-left: 60px;
+        }
+        .gallery__desc {
+            margin-left: 50px;
+        }
+    }
 }
-/* Стрелка влево */
-.slick-arrow.slick-prev {
+@media (max-width: 700px) {
+    .download {
+        &__icon {
+            margin-left: 220px;
+        }
+        &__desc {
+            margin-left: 140px;
+        }
+        &__text {
+            margin-left: 250px;
+        }
+        .buttons {
+            margin-left: 190px;
+        }
+    }
 }
-/* Стрелка вправо */
-.slick-arrow.slick-next {
+@media (max-width: 630px) {
+    .hello {
+        background-position: 0px 300px;
+        .hello__title {
+            margin-left: -3px;
+        }
+    }
+    .about {
+        .about__categories {
+            margin: 62px 0 0 75px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 190px;
+        }
+        &__desc {
+            margin-left: 110px;
+        }
+        &__text {
+            margin-left: 220px;
+        }
+        .buttons {
+            margin-left: 160px;
+        }
+    }
 }
-/* Стрелка не активная */
-.slick-arrow.slick-disabled {
+@media (max-width: 576px) {
+    .about {
+        .about__categories {
+            margin: 2px 0 0 110px;
+            .category__item {
+                width: 300px;
+                margin: 180px 0 0 0px;
+                &:last-child {
+                    margin: 180px 0 0 0px;
+                }
+            }
+        }
+    }
+    .share {
+        height: 1200px;
+        .share__iphone {
+            margin-left: -30px;
+        }
+        .share__title {
+            margin: 70px 0 0 50px;
+        }
+        .share__desc {
+            width: 350px;
+            margin: 200px 0 0 60px;
+        }
+        .share__button-desc {
+            width: 300px;
+            margin: 550px 0 0 -320px;
+        }
+        .button__slider {
+            margin: 340px 0 0 140px;
+            .slick-dots {
+                margin-left: 45px;
+            }
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 160px;
+        }
+        &__desc {
+            margin-left: 80px;
+        }
+        &__text {
+            margin-left: 190px;
+        }
+        .buttons {
+            margin-left: 130px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 160px;
+        }
+        &__ios {
+            margin-left: 140px;
+            .ios__desc {
+                width: 300px;
+            }
+        }
+        &__android {
+            margin: 60px 0 0 110px;
+            .android__desc {
+                width: 300px;
+            }
+        }
+        .line {
+            margin-left: 50px;
+        }
+        .android__img {
+            width: 300px;
+        }
+    }
 }
-/* Точки (булиты) */
-.slick-dots {
+@media (max-width: 630px) {
+    .about {
+        .about__categories {
+            margin: 62px 0 0 75px;
+        }
+    }
 }
-.slick-dots li {
+@media (max-width: 545px) {
+    .features {
+        .features__title {
+            margin-left: 80px;
+        }
+        .features__slider {
+            margin-left: 45px;
+            width: 420px;
+            .slick-dots {
+                width: 420px;
+            }
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 140px;
+        }
+        &__desc {
+            margin-left: 60px;
+        }
+        &__text {
+            margin-left: 170px;
+        }
+        .buttons {
+            margin-left: 110px;
+        }
+    }
 }
-/* Активная точка */
-.slick-dots li.slick-active {
+@media (max-width: 520px) {
+    .gallery {
+        .gallery__title {
+            margin-left: 40px;
+        }
+        .gallery__desc {
+            width: 350px;
+            margin-left: 60px;
+        }
+    }
 }
-/* Элемент точки */
-.slick-dots li button {
+@media (max-width: 500px) {
+    .hello {
+        .hello__title {
+            font-size: 65px;
+        }
+    }
+    .features {
+        .features__title {
+            margin-left: 60px;
+        }
+        .features__desc {
+            text-align: center;
+            width: 350px;
+            margin-left: 50px;
+        }
+        .features__slider {
+            margin-left: 20px;
+        }
+        .features__img {
+            margin-left: -50px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 120px;
+        }
+        &__desc {
+            margin-left: 40px;
+        }
+        &__text {
+            margin-left: 150px;
+        }
+        .buttons {
+            margin-left: 90px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 120px;
+        }
+        &__ios {
+            margin-left: 110px;
+            .ios__desc {
+                width: 300px;
+            }
+        }
+        &__android {
+            margin: 60px 0 0 90px;
+            .android__desc {
+                width: 300px;
+            }
+        }
+        .line {
+            margin-left: 50px;
+        }
+    }
 }
-//======================================Gallery
+@media (max-width: 480px) {
+    .hello {
+        .hello__title {
+            margin-left: -30px;
+        }
+    }
+    .about {
+        .about__title {
+            margin: 65px 0 0 40px;
+        }
+        .about__categories {
+            margin: 2px 0 0 50px;
+        }
+    }
+    .share {
+        .share__title {
+            margin-left: 40px;
+        }
+        .share__iphone {
+            width: 450px;
+            margin-left: 10px;
+        }
+        .share__desc {
+            margin-left: 50px;
+        }
+        .button__slider {
+            margin-left: 110px;
+        }
+        .share__button-desc {
+            margin-left: -340px;
+        }
+    }
+    .features {
+        .features__title {
+            margin-left: 30px;
+        }
+        .features__slider {
+            margin-left: 10px;
+            width: 390px;
+            .slick-dots {
+                width: 390px;
+            }
+            .slider__item {
+                margin-left: -30px;
+            }
+        }
+        .features__desc {
+            margin-left: 35px;
+        }
+        .features__img {
+            width: 500px;
+            margin-left: -35px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 100px;
+        }
+        &__desc {
+            margin-left: 20px;
+        }
+        &__text {
+            margin-left: 130px;
+        }
+        .buttons {
+            margin-left: 70px;
+        }
+    }
+    .gallery {
+        .gallery__title {
+            margin-left: 20px;
+        }
+        .gallery__desc {
+            width: 350px;
+            margin-left: 30px;
+        }
+    }
+}
+@media (max-width: 440px) {
+    .hello {
+        .hello__title {
+            font-size: 60px;
+            margin-left: -50px;
+        }
+    }
+    .share {
+        .share__title {
+            margin-left: 20px;
+        }
+        .share__iphone {
+            margin-left: -20px;
+        }
+        .share__desc {
+            margin-left: 35px;
+        }
+    }
+    .features {
+        .features__title {
+            margin-left: 15px;
+        }
+        .features__desc {
+            margin-left: 10px;
+        }
+        .features__slider {
+            margin-left: 37px;
+            width: 310px;
+            .slider__item {
+                height: 220px;
+
+                .item__text {
+                    margin-top: 60px;
+                    margin-left: 131px;
+                    width: 210px;
+                }
+            }
+            .slick-dots {
+                margin-top: -2px;
+                width: 310px;
+            }
+        }
+        .features__img {
+            margin-left: -47px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 90px;
+        }
+        &__desc {
+            width: 300px;
+            margin: 300px 0 0 60px;
+        }
+        &__text {
+            margin-left: 120px;
+        }
+        .buttons {
+            margin-left: 60px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 100px;
+        }
+        &__ios {
+            margin-left: 90px;
+        }
+        &__android {
+            margin: 60px 0 0 70px;
+        }
+    }
+    .gallery {
+        .gallery__title {
+            font-size: 45px;
+            margin-left: 15px;
+        }
+        .gallery__desc {
+            margin-left: 20px;
+        }
+    }
+}
+@media (max-width: 420px) {
+    .features {
+        .features__slider {
+            margin-left: 30px;
+        }
+        .features__img {
+            margin-left: -63px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 80px;
+        }
+        &__desc {
+            width: 300px;
+            margin-left: 50px;
+        }
+        &__text {
+            margin-left: 110px;
+        }
+        .buttons {
+            margin-left: 50px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 70px;
+        }
+        &__ios {
+            margin-left: 60px;
+        }
+        &__android {
+            margin-left: 40px;
+        }
+        .line {
+            margin-left: 10px;
+        }
+    }
+}
+@media (max-width: 400px) {
+    .hello {
+        .hello__title {
+            margin-left: -60px;
+        }
+    }
+    .about {
+        .about__categories {
+            margin: 22px 0 0 40px;
+        }
+    }
+    .share {
+        .share__title {
+            margin-left: 10px;
+        }
+        .share__desc {
+            margin-left: 20px;
+        }
+        .button__slider {
+            margin-left: 100px;
+        }
+        .share__button-desc {
+            position: absolute;
+            left: 0;
+            margin-left: 50px;
+        }
+        .share__iphone {
+            margin-left: -30px;
+        }
+    }
+    .features {
+        .features__title {
+            margin-left: 10px;
+        }
+        .features__desc {
+            margin-left: 2px;
+        }
+        .features__slider {
+            margin-left: 20px;
+        }
+        .features__img {
+            margin-left: -72px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 70px;
+        }
+        &__desc {
+            margin-left: 40px;
+        }
+        &__text {
+            margin-left: 100px;
+        }
+        .buttons {
+            margin-left: 40px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 65px;
+        }
+        &__ios {
+            margin-left: 55px;
+        }
+        &__android {
+            margin: 60px 0 0 35px;
+        }
+        .line {
+            margin-left: 25px;
+        }
+    }
+    .gallery {
+        .gallery__title {
+            font-size: 45px;
+            margin-left: -3px;
+        }
+        .gallery__desc {
+            margin-left: -2px;
+        }
+        .photos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 20px;
+            .gallery__photo {
+                width: 350px;
+                .gallery__item {
+                    width: 350px;
+                }
+            }
+            .gallery__block {
+                width: 350px;
+            }
+        }
+    }
+}
+@media (max-width: 376px) {
+    .hello {
+        .hello__title {
+            width: 300px;
+            font-size: 45px;
+            margin-left: 25px;
+        }
+    }
+    .about {
+        .about__title {
+            margin: 65px 0 0 20px;
+        }
+        .about__categories {
+            margin: 2px 0 0 28px;
+        }
+    }
+    .share {
+        .share__title {
+            font-size: 42px;
+            margin-left: 20px;
+        }
+        .share__desc {
+            margin-left: 20px;
+        }
+        .share__button-desc {
+            position: absolute;
+            left: 0;
+            margin: 400px 0 0 50px;
+        }
+        .share__iphone {
+            margin-left: -40px;
+        }
+        .button__slider {
+            margin-left: 80px;
+        }
+    }
+    .features {
+        .features__title {
+            font-size: 38px;
+            margin-left: 25px;
+        }
+        .features__desc {
+            width: 300px;
+            margin-left: 16px;
+        }
+        .features__slider {
+            margin-left: 20px;
+        }
+        .features__img {
+            width: 450px;
+            margin-left: -50px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 60px;
+        }
+        &__desc {
+            margin-left: 30px;
+        }
+        &__text {
+            margin-left: 90px;
+        }
+        .buttons {
+            margin-left: 30px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 50px;
+        }
+        &__ios {
+            margin-left: 40px;
+        }
+        &__android {
+            margin: 60px 0 0 20px;
+        }
+        .line {
+            margin-left: 20px;
+        }
+    }
+    .gallery {
+        .gallery__title {
+            font-size: 45px;
+            margin-left: -8px;
+        }
+        .gallery__desc {
+            margin-left: -2px;
+        }
+        .photos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 13px;
+            .gallery__photo {
+                width: 350px;
+                .gallery__item {
+                    width: 350px;
+                }
+            }
+            .gallery__block {
+                width: 350px;
+            }
+        }
+    }
+}
+@media (max-width: 365px) {
+    .features {
+        .features__title {
+        }
+        .features__desc {
+            margin-left: 10px;
+        }
+        .features__slider {
+            margin-left: 10px;
+        }
+        .features__img {
+            margin-left: -62px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 50px;
+        }
+        &__desc {
+            margin-left: 20px;
+        }
+        &__text {
+            margin-left: 80px;
+        }
+        .buttons {
+            margin-left: 20px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 45px;
+        }
+        &__ios {
+            margin-left: 35px;
+        }
+        &__android {
+            margin: 60px 0 0 15px;
+        }
+        .line {
+            margin-left: 10px;
+        }
+    }
+    .gallery {
+        height: 1700px;
+        .gallery__title {
+            font-size: 40px;
+            margin-left: 5px;
+        }
+        .gallery__desc {
+            width: 320px;
+            margin-left: 5px;
+        }
+        .photos {
+            margin-left: 30px;
+            .gallery__photo {
+                width: 300px;
+                .gallery__item {
+                    width: 300px;
+                }
+                &:first-child {
+                    margin-top: 420px;
+                }
+            }
+            .gallery__block {
+                width: 300px;
+            }
+        }
+    }
+}
+@media (max-width: 340px) {
+    .hello {
+        .hello__title {
+            margin-left: 0px;
+        }
+    }
+    .about {
+        .about__title {
+            margin: 65px 0 0 0px;
+        }
+        .about__categories {
+            margin: 2px 0 0 5px;
+        }
+    }
+    .share {
+        .share__title {
+            margin-left: 2px;
+        }
+        .share__desc {
+            width: 300px;
+            margin-top: 130px;
+            margin-left: 12px;
+        }
+        .share__button-desc {
+            margin-left: 20px;
+        }
+        .button__slider {
+            margin-left: 60px;
+        }
+        .share__iphone {
+            width: 425px;
+            margin-left: -55px;
+        }
+    }
+    .features {
+        .features__title {
+            margin-left: 6px;
+        }
+        .features__desc {
+            margin-left: -6px;
+        }
+        .features__slider {
+            margin-left: -9px;
+        }
+        .features__img {
+            width: 430px;
+            margin-left: -68px;
+        }
+    }
+    .download {
+        &__icon {
+            margin-left: 40px;
+        }
+        &__desc {
+            margin-left: 10px;
+        }
+        &__text {
+            margin-left: 70px;
+        }
+        .buttons {
+            margin-left: 10px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 50px;
+        }
+        &__ios {
+            margin-left: 40px;
+        }
+        &__android {
+            margin: 60px 0 0 20px;
+        }
+        .line {
+            margin-left: 20px;
+        }
+    }
+    .gallery {
+        .gallery__title {
+            margin-top: -50px;
+            width: 300px;
+            white-space: pre-wrap;
+            text-align: center;
+            margin-left: 0px;
+        }
+        .gallery__desc {
+            width: 300px;
+            margin-left: 0;
+        }
+        .photos {
+            margin-left: 15px;
+        }
+    }
+}
+@media (max-width: 330px) {
+    .download {
+        &__icon {
+            margin-left: 35px;
+        }
+        &__desc {
+            margin-left: 5px;
+        }
+        &__text {
+            margin-left: 65px;
+        }
+        .buttons {
+            margin-left: 5px;
+        }
+    }
+    .compatibility {
+        &__title {
+            margin-left: 35px;
+        }
+        &__ios {
+            margin-left: 25px;
+        }
+        &__android {
+            margin: 60px 0 0 0px;
+        }
+        .line {
+            margin-left: 20px;
+        }
+    }
+    .gallery {
+        .gallery__title {
+            margin-left: -6px;
+        }
+        .gallery__desc {
+            margin-left: -5px;
+        }
+        .photos {
+            margin-left: 10px;
+        }
+    }
+}
